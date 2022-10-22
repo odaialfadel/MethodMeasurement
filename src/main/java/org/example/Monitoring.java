@@ -10,7 +10,15 @@ public class Monitoring implements MonitorTimer{
 
     private long start;
     private long end;
+    private static Monitoring monitoring;
+    private Monitoring(String name){}
 
+    public static Monitoring getInstance(String name){
+        if(monitoring == null) {
+            return new Monitoring(name);
+        }
+        return monitoring;
+    }
 
     @Override
     public void start() {
