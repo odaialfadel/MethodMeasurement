@@ -11,11 +11,11 @@ public class Monitoring implements MonitorTimer{
     private long start;
     private long end;
     private static Monitoring monitoring;
-    private Monitoring(String name){}
+    private Monitoring(){}
 
-    public static Monitoring getInstance(String name){
+    public static MonitorTimer getInstance(){
         if(monitoring == null) {
-            return new Monitoring(name);
+            return new Monitoring();
         }
         return monitoring;
     }
@@ -29,7 +29,6 @@ public class Monitoring implements MonitorTimer{
     public void stop() {
        setEnd(System.currentTimeMillis());
         long duration = getEnd() - getStart();
-//        duration = duration / 1000;
         System.out.println("Time takes to proceed: " + duration + " ms");
     }
 }

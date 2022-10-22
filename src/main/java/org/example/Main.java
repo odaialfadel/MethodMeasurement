@@ -1,8 +1,9 @@
 package org.example;
 
 public class Main {
+    static MonitorTimer monitorTimer = Monitoring.getInstance();
     public static void main(String[] args) {
-        MonitorTimer monitorTimer = Monitoring.getInstance("loop");
+
         monitorTimer.start();
         loop();
         monitorTimer.stop();
